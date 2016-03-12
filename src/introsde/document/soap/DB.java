@@ -40,6 +40,21 @@ public interface DB {
 
     /**
      * 
+     * @param calories
+     * @return
+     *     returns java.util.List<introsde.document.soap.Food>
+     */
+    @WebMethod
+    @WebResult(name = "food", targetNamespace = "http://soap.document.introsde/")
+    @RequestWrapper(localName = "getFoodByCaloriesBound", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByCaloriesBound")
+    @ResponseWrapper(localName = "getFoodByCaloriesBoundResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByCaloriesBoundResponse")
+    @Action(input = "http://soap.document.introsde/DB/getFoodByCaloriesBoundRequest", output = "http://soap.document.introsde/DB/getFoodByCaloriesBoundResponse")
+    public List<Food> getFoodByCaloriesBound(
+        @WebParam(name = "calories", targetNamespace = "")
+        double calories);
+
+    /**
+     * 
      * @param idFood
      * @return
      *     returns introsde.document.soap.Food
@@ -67,21 +82,6 @@ public interface DB {
     public List<Food> getFoodByType(
         @WebParam(name = "type", targetNamespace = "")
         String type);
-
-    /**
-     * 
-     * @param calories
-     * @return
-     *     returns java.util.List<introsde.document.soap.Food>
-     */
-    @WebMethod
-    @WebResult(name = "food", targetNamespace = "http://soap.document.introsde/")
-    @RequestWrapper(localName = "getFoodByCaloriesBound", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByCaloriesBound")
-    @ResponseWrapper(localName = "getFoodByCaloriesBoundResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByCaloriesBoundResponse")
-    @Action(input = "http://soap.document.introsde/DB/getFoodByCaloriesBoundRequest", output = "http://soap.document.introsde/DB/getFoodByCaloriesBoundResponse")
-    public List<Food> getFoodByCaloriesBound(
-        @WebParam(name = "calories", targetNamespace = "")
-        double calories);
 
     /**
      * 

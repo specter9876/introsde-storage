@@ -28,18 +28,6 @@ public interface DB {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<introsde.document.soap.Food>
-     */
-    @WebMethod
-    @WebResult(name = "food", targetNamespace = "http://soap.document.introsde/")
-    @RequestWrapper(localName = "getALLFood", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetALLFood")
-    @ResponseWrapper(localName = "getALLFoodResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetALLFoodResponse")
-    @Action(input = "http://soap.document.introsde/DB/getALLFoodRequest", output = "http://soap.document.introsde/DB/getALLFoodResponse")
-    public List<Food> getALLFood();
-
-    /**
-     * 
      * @param idFood
      * @return
      *     returns introsde.document.soap.Food
@@ -55,18 +43,15 @@ public interface DB {
 
     /**
      * 
-     * @param type
      * @return
      *     returns java.util.List<introsde.document.soap.Food>
      */
     @WebMethod
     @WebResult(name = "food", targetNamespace = "http://soap.document.introsde/")
-    @RequestWrapper(localName = "getFoodByType", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByType")
-    @ResponseWrapper(localName = "getFoodByTypeResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByTypeResponse")
-    @Action(input = "http://soap.document.introsde/DB/getFoodByTypeRequest", output = "http://soap.document.introsde/DB/getFoodByTypeResponse")
-    public List<Food> getFoodByType(
-        @WebParam(name = "type", targetNamespace = "")
-        String type);
+    @RequestWrapper(localName = "getALLFood", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetALLFood")
+    @ResponseWrapper(localName = "getALLFoodResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetALLFoodResponse")
+    @Action(input = "http://soap.document.introsde/DB/getALLFoodRequest", output = "http://soap.document.introsde/DB/getALLFoodResponse")
+    public List<Food> getALLFood();
 
     /**
      * 
@@ -82,6 +67,21 @@ public interface DB {
     public List<Food> getFoodByCaloriesBound(
         @WebParam(name = "calories", targetNamespace = "")
         double calories);
+
+    /**
+     * 
+     * @param type
+     * @return
+     *     returns java.util.List<introsde.document.soap.Food>
+     */
+    @WebMethod
+    @WebResult(name = "food", targetNamespace = "http://soap.document.introsde/")
+    @RequestWrapper(localName = "getFoodByType", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByType")
+    @ResponseWrapper(localName = "getFoodByTypeResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetFoodByTypeResponse")
+    @Action(input = "http://soap.document.introsde/DB/getFoodByTypeRequest", output = "http://soap.document.introsde/DB/getFoodByTypeResponse")
+    public List<Food> getFoodByType(
+        @WebParam(name = "type", targetNamespace = "")
+        String type);
 
     /**
      * 

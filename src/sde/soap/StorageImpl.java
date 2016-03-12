@@ -459,7 +459,7 @@ public class StorageImpl implements Storage {
     //////////////////FOODADATER////////////////////////////////
 
     @Override
-    public String getAdapterFood(String typr){
+    public String getAdapterFood(String type){
         
         ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);

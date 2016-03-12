@@ -209,7 +209,7 @@ public interface Storage {
     //Method #29:
     @WebMethod(operationName="getAdapterFood")
     @WebResult(name="food")
-    public String getAdapterFood();//throws IOException, JAXBException, SAXException,TransformerException, ParserConfigurationException;
+    public String getAdapterFood(@WebParam(name = "type") String type);//throws IOException, JAXBException, SAXException,TransformerException, ParserConfigurationException;
     
 
 }

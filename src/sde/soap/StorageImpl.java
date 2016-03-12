@@ -459,7 +459,7 @@ public class StorageImpl implements Storage {
     //////////////////FOODADATER////////////////////////////////
 
     @Override
-    public String getAdapterFood(){
+    public String getAdapterFood(String typr){
         
         ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);
@@ -471,7 +471,7 @@ public class StorageImpl implements Storage {
 		String result = "";
 		int count = 0;
         
-        String url = "https://infinite-garden-2438.herokuapp.com/sdelab/food/pasta";
+        String url = "https://infinite-garden-2438.herokuapp.com/sdelab/food/"+type;
 		try{
             URL obj = new URL(url);
             HttpURLConnection  con = (HttpURLConnection) obj.openConnection();
@@ -490,7 +490,7 @@ public class StorageImpl implements Storage {
             
             
             resp = getConnectionOutputJSON(con);
-            //count =TestClient.countStringOccurence(resp, "\"name\"");
+           
             responseCode = con.getResponseCode();
             System.out.println("=> Result: " + con.getResponseCode());
             

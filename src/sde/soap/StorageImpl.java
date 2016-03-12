@@ -74,13 +74,10 @@ public class StorageImpl implements Storage {
     @Override
     public List<Food> getFood(){
         
-       // DBService service= new DBService();
-        //DB db=service.getDBImplPort();
+      
         DB db=getDB();
         List <Food> food = db.getALLFood();
-        //List <Food> food=SoapHandle.getHandle().getDb().getALLFood();
         return food;
-      //  return null;
     }
    
    
@@ -270,11 +267,11 @@ public class StorageImpl implements Storage {
     //Method #17:
     @Override
     public Activity createActivity (Activity activity){
-         //BOOO solito errore della minchia
+        
         DB db=getDB();
         Activity activity2= db.createActivity(activity);
         return activity2;
-        //return null;
+        
     }
     
     ///GOAL//////////////////////////////////////////////////////
@@ -301,8 +298,8 @@ public class StorageImpl implements Storage {
     @Override
     public List<Goal> getGoalByType(String type, long id ){
         
-        ////modifacare va solo per user 1
-         DB db=getDB();
+        
+        DB db=getDB();
         List <Goal> goal= db.getGoalByType(type,id);
         return goal;
     }
@@ -311,7 +308,6 @@ public class StorageImpl implements Storage {
     @Override
     public List<Goal> getGoalNotAchieved(long id){
         
-        ////modifacare va solo per user 1
         DB db=getDB();
         List<Goal> goal=db.getGoalNotAchieved(id);
         return goal;
@@ -321,7 +317,7 @@ public class StorageImpl implements Storage {
     @Override
     public List<Goal> getGoalAchieved(long id){
         
-        ////modifacare va solo per user 1
+        
         DB db=getDB();
         List<Goal> goal=db.getGoalAchieved(id);
         return goal;
@@ -379,7 +375,7 @@ public class StorageImpl implements Storage {
     @Override
     public HealthMeasure createHealthMeasure(HealthMeasure healthMeasure){
         
-        //BOOO solito errore della minchia
+
 
         DB db=getDB();
         return  db.createHealthMeasure(healthMeasure);
@@ -389,7 +385,7 @@ public class StorageImpl implements Storage {
     //Method #28:
     @Override
     public HealthMeasure updateHealthMeasure(HealthMeasure healthMeasure){
-        //BOOO solito errore della minchia
+       
  
         DB db=getDB();
         return db.updateHealthMeasure(healthMeasure);
@@ -405,7 +401,7 @@ public class StorageImpl implements Storage {
         
         ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);
-		WebTarget service = client.target(UriBuilder.fromUri("http://192.168.1.7:5700/sdelab").build());
+		WebTarget service = client.target(UriBuilder.fromUri("https://infinite-garden-2438.herokuapp.com/sdelab").build());
         int responseCode = -1;
 		String resp = "";
 		String accept = "";
@@ -415,7 +411,7 @@ public class StorageImpl implements Storage {
         
         StringBuffer response=null;
         
-        String url = "http://192.168.1.7:5700/sdelab/quote";
+        String url = "https://infinite-garden-2438.herokuapp.com/sdelab/quote";
 		try{
         URL obj = new URL(url);
 		HttpURLConnection  con = (HttpURLConnection) obj.openConnection();
@@ -467,7 +463,7 @@ public class StorageImpl implements Storage {
         
         ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);
-		WebTarget service = client.target(UriBuilder.fromUri("http://192.168.1.7:5700/sdelab").build());
+		WebTarget service = client.target(UriBuilder.fromUri("https://infinite-garden-2438.herokuapp.com/sdelab").build());
         int responseCode = -1;
 		String resp = "";
 		String accept = "";
@@ -475,7 +471,7 @@ public class StorageImpl implements Storage {
 		String result = "";
 		int count = 0;
         
-        String url = "http://192.168.1.7:5700/sdelab/food/pasta";
+        String url = "https://infinite-garden-2438.herokuapp.com/sdelab/food/pasta";
 		try{
             URL obj = new URL(url);
             HttpURLConnection  con = (HttpURLConnection) obj.openConnection();

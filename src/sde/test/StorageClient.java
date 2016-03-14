@@ -30,7 +30,7 @@ public class StorageClient{
 		Marshaller m = jc.createMarshaller();
 		m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
         */
-		//System.out.println("SOAP: http://192.168.1.8:6901/ws/db?wsdl");
+		System.out.println("SOAP: http://192.168.1.8:6901/ws/db?wsdl");
         User user=db.getUserById(1L);
         System.out.println(user.getUserName());
         
@@ -41,11 +41,8 @@ public class StorageClient{
 		
         
     }
-    
     public static DB getDB(){
-          System.out.println("flaggggggg");
         DBService service= new DBService();
-          System.out.println("flaggggggg2222");
         DB db=service.getDBImplPort();
         return db;
     }

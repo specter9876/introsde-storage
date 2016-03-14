@@ -2,7 +2,7 @@ package sde.soap;
 
 import introsde.document.soap.Food;
 import introsde.document.soap.*;
-
+import sde.model.*;
 
 import javax.jws.soap.SOAPBinding;
 import javax.jws.soap.SOAPBinding.Style;
@@ -32,6 +32,8 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import org.codehaus.jackson.map.*;
+import org.json.*;
 
 
 import org.glassfish.jersey.client.ClientConfig;
@@ -142,7 +144,7 @@ public class StorageImpl implements Storage {
     @Override
     public User getUserById(Long idUser){
 
-             DB db=getDB();
+        DB db=getDB();
         User user=db.getUserById(idUser);
         return user;
     }
@@ -369,7 +371,6 @@ public class StorageImpl implements Storage {
     
         return healthMeasure;
     }
-     //////////////////////////////////////////////////////////////////////
     
     //Method #27:
     @Override
@@ -378,6 +379,21 @@ public class StorageImpl implements Storage {
 
 
         DB db=getDB();
+        
+       /* System.out.println("FLAAAAGGG");
+        System.out.println(healthMeasure);
+        System.out.println(healthMeasure.getType());
+        System.out.println(healthMeasure.getValue());
+        User u=db.getUserById(1L);
+        
+        healthMeasure.setUser(u);
+        System.out.println(healthMeasure.getUser().getIdUser());
+    
+
+        HealthMeasure hm= db.createHealthMeasure(healthMeasure);
+        System.out.println("FLAAAAGGG22222");
+        System.out.println(hm);*/
+
         return  db.createHealthMeasure(healthMeasure);
 
     }
@@ -459,7 +475,7 @@ public class StorageImpl implements Storage {
     //////////////////FOODADATER////////////////////////////////
 
     @Override
-    public String getAdapterFood(String type){
+    public List<Food> getAdapterFood(String type){
         
         ClientConfig clientConfig = new ClientConfig();
 		Client client = ClientBuilder.newClient(clientConfig);
@@ -470,6 +486,10 @@ public class StorageImpl implements Storage {
 		String contentType = "";
 		String result = "";
 		int count = 0;
+        List <Food> foodlist=new ArrayList<Food> ();
+        List <FoodAdapter> adapterFoodList=new ArrayList<FoodAdapter> ();
+        
+        
         
         String url = "https://infinite-garden-2438.herokuapp.com/sdelab/food/"+type;
 		try{
@@ -496,12 +516,51 @@ public class StorageImpl implements Storage {
             
             System.out.println("=> HTTP Status: " + responseCode);
             System.out.println(resp);
+            
+            
+            
+            
+            System.out.println("flag123");
+            JSONArray array= new JSONArray(resp);
+            System.out.println("flag123456");
+            System.out.println("length:" +array.length());
+            
+            //System.out.println("test:" +array.getJSONObject(2).getString("name"));
+            //System.out.println("test:" +array.getJSONObject(9).getString("name"));
+
+            
+            for(int i = 0; i < array.length(); i++){
+                 JSONObject object = array.getJSONObject(i);
+                Food foodadapter=new Food();
+
+               /* System.out.println("name "+i+": " +array.getJSONObject(i).getString("name"));
+                 System.out.println("type "+i+": " +array.getJSONObject(i).getString("type"));
+                System.out.println("calories "+i+": " +array.getJSONObject(i).getDouble("calories"));
+                 System.out.println("descritpion "+i+": " +array.getJSONObject(i).getString("description"));
+                
+                System.out.println("iteration:" +i);*/
+                foodadapter.setName(array.getJSONObject(i).getString("name"));
+                foodadapter.setType(array.getJSONObject(i).getString("type"));
+                foodadapter.setCalories(array.getJSONObject(i).getDouble("calories"));
+                foodadapter.setDescription(array.getJSONObject(i).getString("description"));
+               
+                foodlist.add(foodadapter);
+                
+                
+                
+            }
+            
+            
+           
+            
         }
         catch (IOException e) {
             
         }
         
-        return resp;
+        
+        
+        return foodlist;
 
         
         

@@ -26,6 +26,9 @@
 	</info>
 	
 	<dependencies>
+        <dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.7.2"/>
+        <dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.13"/>
+
         <dependency org="xerces" name="xercesImpl" rev="2.8.0"/>
         <dependency org="org.codehaus.httpcache4j.resolvers" name="resolvers-net-urlconnection" rev="4.0-M6"/>
         <dependency org="javax.xml.bind" name="jaxb-api" rev="2.2.11"/>

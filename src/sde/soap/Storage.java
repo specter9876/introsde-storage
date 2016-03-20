@@ -107,6 +107,10 @@ public interface Storage {
     @WebResult(name="activity")
     public List<Activity> getAllActivity();
     
+    @WebMethod(operationName="getActivityByIdUser")
+    @WebResult(name="activity")
+    public List<Activity> getActivityByIdUser(@WebParam(name = "idUser") Long idUser);
+    
     //Method #13:
     @WebMethod(operationName="getActivityById")
     @WebResult(name="activity")
@@ -169,6 +173,16 @@ public interface Storage {
     @WebMethod(operationName="controlGoal")
     @WebResult(name="goal")
     public List<Goal> controlGoal(@WebParam(name = "type") String type);
+    
+    
+    @WebMethod(operationName="createGoal")
+    @WebResult(name="goal")
+    public Goal createGoal(@WebParam(name = "goalIn") Goal goal);
+    
+    @WebMethod(operationName="updateGoal")
+    @WebResult(name="goal")
+    public Goal updateGoal(@WebParam(name = "goalIn") Goal goal);
+
 
    ///HEALTHMEASURE///////////////////////////////////////////////////////
     

@@ -1,6 +1,6 @@
 package sde.soap;
 
-import introsde.document.soap.Food;
+//import introsde.document.soap.Food;
 import introsde.document.soap.*;
 import sde.model.*;
 
@@ -161,20 +161,20 @@ public class StorageImpl implements Storage {
     //Method #7:
     @Override
     public User createUser (User user){
-        //BOOO solito errore della minchia
+       
         DB db=getDB();
         return db.createUser(user);
-        //return null;
+       
     }
     
     //Method #8:
     @Override
     public User updateUser (User user){
         
-        //BOOO solito errore della minchia
+       
         DB db=getDB();
         return db.updateUser(user);
-        //return null;
+        
     }
     
     //Method #9:
@@ -228,6 +228,15 @@ public class StorageImpl implements Storage {
         List<Activity> activity=db.getAllActivity();
         return activity;
     }
+    
+    @Override
+    public List<Activity> getActivityByIdUser(Long idUser){
+        
+        DB db=getDB();
+        List<Activity> activity=db.getActivityByIdUser(idUser);
+        return activity;
+    }
+    
     
     //Method #13:
     @Override
@@ -341,6 +350,22 @@ public class StorageImpl implements Storage {
         return null;
     }
     
+    @Override
+    public Goal createGoal(Goal goal){
+        
+        DB db=getDB();
+        return db.createGoal(goal);
+    }
+    
+    @Override
+    public Goal updateGoal(Goal goal){
+        
+        DB db=getDB();
+        return db.updateGoal(goal);
+        
+    }
+
+    
     
     ///HEALTHMEASURE///////////////////////////////////////////////////////
     
@@ -376,24 +401,9 @@ public class StorageImpl implements Storage {
     @Override
     public HealthMeasure createHealthMeasure(HealthMeasure healthMeasure){
         
-
-
         DB db=getDB();
-        
-       /* System.out.println("FLAAAAGGG");
-        System.out.println(healthMeasure);
-        System.out.println(healthMeasure.getType());
-        System.out.println(healthMeasure.getValue());
-        User u=db.getUserById(1L);
-        
-        healthMeasure.setUser(u);
-        System.out.println(healthMeasure.getUser().getIdUser());
-    
-
-        HealthMeasure hm= db.createHealthMeasure(healthMeasure);
-        System.out.println("FLAAAAGGG22222");
-        System.out.println(hm);*/
-
+        //System.out.println(HealthMeasure)
+               
         return  db.createHealthMeasure(healthMeasure);
 
     }
@@ -445,8 +455,7 @@ public class StorageImpl implements Storage {
         ;
         
         
-		//resp = getConnectionOutputJSON(con);
-		//count =TestClient.countStringOccurence(resp, "\"name\"");
+		
         BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
         String inputLine;
         response = new StringBuffer();

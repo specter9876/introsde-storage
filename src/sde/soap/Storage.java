@@ -83,6 +83,7 @@ public interface Storage {
     
     //Method #9:
     @WebMethod(operationName="removeUser")
+    @WebResult(name="removed")
     public boolean removeUser (@WebParam(name="userIn") User user);
     
     //Methid #10:
@@ -92,11 +93,13 @@ public interface Storage {
 
     //Method #11:
     @WebMethod(operationName = "updatePassword")
+    @WebResult(name="updatef")
 	public boolean updatePassword(@WebParam(name = "idUser") long id, @WebParam(name = "firstPassword") String firstPassword, @WebParam(name = "secondPassword") String secondPassword);
     
     
     //Methid #11:
     @WebMethod(operationName = "controlUsernamePassword")
+    @WebResult(name="control")
 	public boolean controlUsernamePassword(@WebParam(name = "userName") String userName, @WebParam(name = "password") String password);
     
     ///ACTIVITY//////////////////////////////////////////////////////
@@ -214,6 +217,7 @@ public interface Storage {
     //////////////////QUOTEADAPTER////////////////////////////////////////////////
     //Method #29:
     @WebMethod(operationName="getQuote")
+    @WebResult(name="finalquote")
     public String getQuote();//throws IOException, JAXBException, SAXException,TransformerException, ParserConfigurationException;
 
     ////////////////////////FOODADAPETR///////////////////////////////////////////

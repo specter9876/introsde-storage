@@ -214,7 +214,6 @@ public interface Storage {
     //////////////////QUOTEADAPTER////////////////////////////////////////////////
     //Method #29:
     @WebMethod(operationName="getQuote")
-    @WebResult(name="quote")
     public String getQuote();//throws IOException, JAXBException, SAXException,TransformerException, ParserConfigurationException;
 
     ////////////////////////FOODADAPETR///////////////////////////////////////////

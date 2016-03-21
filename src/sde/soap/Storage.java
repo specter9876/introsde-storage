@@ -92,7 +92,6 @@ public interface Storage {
 
     //Method #11:
     @WebMethod(operationName = "updatePassword")
-	@WebResult(name = "update")
 	public boolean updatePassword(@WebParam(name = "idUser") long id, @WebParam(name = "firstPassword") String firstPassword, @WebParam(name = "secondPassword") String secondPassword);
     
     

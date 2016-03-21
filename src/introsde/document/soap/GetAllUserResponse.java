@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -19,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://soap.document.introsde/}user" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="users" type="{http://soap.document.introsde/}user" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,26 +29,25 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getAllUserResponse", propOrder = {
-    "user"
+    "users"
 })
 public class GetAllUserResponse {
 
-    @XmlElement(namespace = "http://soap.document.introsde/")
-    protected List<User> user;
+    protected List<User> users;
 
     /**
-     * Gets the value of the user property.
+     * Gets the value of the users property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the user property.
+     * This is why there is not a <CODE>set</CODE> method for the users property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getUser().add(newItem);
+     *    getUsers().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +57,11 @@ public class GetAllUserResponse {
      * 
      * 
      */
-    public List<User> getUser() {
-        if (user == null) {
-            user = new ArrayList<User>();
+    public List<User> getUsers() {
+        if (users == null) {
+            users = new ArrayList<User>();
         }
-        return this.user;
+        return this.users;
     }
 
 }

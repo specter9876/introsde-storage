@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -19,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element ref="{http://soap.document.introsde/}food" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="foods" type="{http://soap.document.introsde/}food" maxOccurs="unbounded" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,26 +29,25 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "getFoodByCaloriesBoundResponse", propOrder = {
-    "food"
+    "foods"
 })
 public class GetFoodByCaloriesBoundResponse {
 
-    @XmlElement(namespace = "http://soap.document.introsde/")
-    protected List<Food> food;
+    protected List<Food> foods;
 
     /**
-     * Gets the value of the food property.
+     * Gets the value of the foods property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the food property.
+     * This is why there is not a <CODE>set</CODE> method for the foods property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getFood().add(newItem);
+     *    getFoods().add(newItem);
      * </pre>
      * 
      * 
@@ -59,11 +57,11 @@ public class GetFoodByCaloriesBoundResponse {
      * 
      * 
      */
-    public List<Food> getFood() {
-        if (food == null) {
-            food = new ArrayList<Food>();
+    public List<Food> getFoods() {
+        if (foods == null) {
+            foods = new ArrayList<Food>();
         }
-        return this.food;
+        return this.foods;
     }
 
 }

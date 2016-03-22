@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "DBService", targetNamespace = "http://soap.document.introsde/", wsdlLocation = "http://fathomless-earth-86761.herokuapp.com/ws/db?wsdl")
+@WebServiceClient(name = "DBService", targetNamespace = "http://soap.document.introsde/", wsdlLocation = "http://infinite-savannah-53051.herokuapp.com/ws/db?wsdl")
 public class DBService
     extends Service
 {
@@ -30,7 +30,7 @@ public class DBService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://fathomless-earth-86761.herokuapp.com/ws/db?wsdl");
+            url = new URL("http://infinite-savannah-53051.herokuapp.com/ws/db?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

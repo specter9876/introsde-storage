@@ -198,9 +198,8 @@ public class StorageImpl implements Storage {
 	public User loginUser(String userName, String password){
         
         
-        DBService service= new DBService();
-        DB db=service.getDBImplPort();
-        // DB db=getDB();
+      
+         DB db=getDB();
          User user=db.loginUser(userName,password);
         
         System.out.println("USer: "+user);
@@ -584,14 +583,14 @@ public class StorageImpl implements Storage {
   
     
     /////////////handle///////////////////////////////////////
-  
+  */
     public static DB getDB(){
        
         DBService service= new DBService();
         DB db=service.getDBImplPort();
         return db;
     }
-   
+   /*
     public static String getConnectionOutputJSON(HttpURLConnection con)
     {//throws IOException, JAXBException, SAXException,TransformerException, ParserConfigurationException {
         String retval="";

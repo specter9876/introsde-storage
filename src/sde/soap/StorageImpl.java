@@ -78,7 +78,7 @@ public class StorageImpl implements Storage {
     
     
     ////FOOD//////////////////////////////////////////////////////
-    
+ /*
     //Method #1:
     @Override
     public List<Food> getFood(){
@@ -192,7 +192,7 @@ public class StorageImpl implements Storage {
         db.removeUser(user);
         return true;
     }
-    
+    */
     //Method #10:
    @Override
 	public User loginUser(String userName, String password){
@@ -203,7 +203,7 @@ public class StorageImpl implements Storage {
         System.out.println("USer: "+user);
         return user;
     }
-    
+    /*
     
     //Method #11:
     @Override
@@ -551,12 +551,7 @@ public class StorageImpl implements Storage {
                  JSONObject object = array.getJSONObject(i);
                 Food foodadapter=new Food();
 
-               /* System.out.println("name "+i+": " +array.getJSONObject(i).getString("name"));
-                 System.out.println("type "+i+": " +array.getJSONObject(i).getString("type"));
-                System.out.println("calories "+i+": " +array.getJSONObject(i).getDouble("calories"));
-                 System.out.println("descritpion "+i+": " +array.getJSONObject(i).getString("description"));
-                
-                System.out.println("iteration:" +i);*/
+  
                 foodadapter.setName(array.getJSONObject(i).getString("name"));
                 foodadapter.setType(array.getJSONObject(i).getString("type"));
                 foodadapter.setCalories(array.getJSONObject(i).getDouble("calories"));
@@ -583,7 +578,7 @@ public class StorageImpl implements Storage {
         
         
     }
-    
+    */
     
     /////////////handle///////////////////////////////////////
   

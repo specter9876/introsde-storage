@@ -191,7 +191,9 @@ public class StorageImpl implements Storage {
 	public User loginUser(String userName, String password){
         
          DB db=getDB();
-        User user=db.loginUser(userName,password);
+         User user=db.loginUser(userName,password);
+        
+        System.out.println("USer: "+user);
         return user;
     }
     

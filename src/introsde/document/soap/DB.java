@@ -33,10 +33,10 @@ public interface DB {
      */
     @WebMethod
     @WebResult(name = "foods", targetNamespace = "")
-    @RequestWrapper(localName = "getALLFood", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetALLFood")
-    @ResponseWrapper(localName = "getALLFoodResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetALLFoodResponse")
-    @Action(input = "http://soap.document.introsde/DB/getALLFoodRequest", output = "http://soap.document.introsde/DB/getALLFoodResponse")
-    public List<Food> getALLFood();
+    @RequestWrapper(localName = "getAllFood", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetAllFood")
+    @ResponseWrapper(localName = "getAllFoodResponse", targetNamespace = "http://soap.document.introsde/", className = "introsde.document.soap.GetAllFoodResponse")
+    @Action(input = "http://soap.document.introsde/DB/getAllFoodRequest", output = "http://soap.document.introsde/DB/getAllFoodResponse")
+    public List<Food> getAllFood();
 
     /**
      * 

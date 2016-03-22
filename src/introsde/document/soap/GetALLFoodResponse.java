@@ -9,12 +9,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per getALLFoodResponse complex type.
+ * <p>Classe Java per getAllFoodResponse complex type.
  * 
  * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
  * 
  * <pre>
- * &lt;complexType name="getALLFoodResponse">
+ * &lt;complexType name="getAllFoodResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -28,10 +28,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getALLFoodResponse", propOrder = {
+@XmlType(name = "getAllFoodResponse", propOrder = {
     "foods"
 })
-public class GetALLFoodResponse {
+public class GetAllFoodResponse {
 
     protected List<Food> foods;
 

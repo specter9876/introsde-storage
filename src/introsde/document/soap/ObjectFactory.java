@@ -30,13 +30,11 @@ public class ObjectFactory {
     private final static QName _CreateFood_QNAME = new QName("http://soap.document.introsde/", "createFood");
     private final static QName _UpdateHealthMeasure_QNAME = new QName("http://soap.document.introsde/", "updateHealthMeasure");
     private final static QName _Food_QNAME = new QName("http://soap.document.introsde/", "food");
-    private final static QName _GetALLFoodResponse_QNAME = new QName("http://soap.document.introsde/", "getALLFoodResponse");
     private final static QName _GetHealthMeasureByIdUserResponse_QNAME = new QName("http://soap.document.introsde/", "getHealthMeasureByIdUserResponse");
     private final static QName _ControlUsernamePasswordResponse_QNAME = new QName("http://soap.document.introsde/", "controlUsernamePasswordResponse");
     private final static QName _GetGoalNotAchievedResponse_QNAME = new QName("http://soap.document.introsde/", "getGoalNotAchievedResponse");
     private final static QName _ControlGoalResponse_QNAME = new QName("http://soap.document.introsde/", "controlGoalResponse");
     private final static QName _CreateActivity_QNAME = new QName("http://soap.document.introsde/", "createActivity");
-    private final static QName _GetALLFood_QNAME = new QName("http://soap.document.introsde/", "getALLFood");
     private final static QName _UpdatePassword_QNAME = new QName("http://soap.document.introsde/", "updatePassword");
     private final static QName _CreateUserResponse_QNAME = new QName("http://soap.document.introsde/", "createUserResponse");
     private final static QName _GetAllActivity_QNAME = new QName("http://soap.document.introsde/", "getAllActivity");
@@ -45,6 +43,7 @@ public class ObjectFactory {
     private final static QName _User_QNAME = new QName("http://soap.document.introsde/", "user");
     private final static QName _GetAllGoalResponse_QNAME = new QName("http://soap.document.introsde/", "getAllGoalResponse");
     private final static QName _GetGoalEndAtResponse_QNAME = new QName("http://soap.document.introsde/", "getGoalEndAtResponse");
+    private final static QName _GetAllFoodResponse_QNAME = new QName("http://soap.document.introsde/", "getAllFoodResponse");
     private final static QName _GetAllHealthMeasureResponse_QNAME = new QName("http://soap.document.introsde/", "getAllHealthMeasureResponse");
     private final static QName _HealthMeasure_QNAME = new QName("http://soap.document.introsde/", "healthMeasure");
     private final static QName _GetAllGoal_QNAME = new QName("http://soap.document.introsde/", "getAllGoal");
@@ -89,6 +88,7 @@ public class ObjectFactory {
     private final static QName _GetAllActivityResponse_QNAME = new QName("http://soap.document.introsde/", "getAllActivityResponse");
     private final static QName _ControlUsernamePassword_QNAME = new QName("http://soap.document.introsde/", "controlUsernamePassword");
     private final static QName _CreateHealthMeasure_QNAME = new QName("http://soap.document.introsde/", "createHealthMeasure");
+    private final static QName _GetAllFood_QNAME = new QName("http://soap.document.introsde/", "getAllFood");
     private final static QName _UpdatePasswordResponse_QNAME = new QName("http://soap.document.introsde/", "updatePasswordResponse");
     private final static QName _GetActivityByNameResponse_QNAME = new QName("http://soap.document.introsde/", "getActivityByNameResponse");
     private final static QName _GetUserByIdResponse_QNAME = new QName("http://soap.document.introsde/", "getUserByIdResponse");
@@ -113,6 +113,14 @@ public class ObjectFactory {
      */
     public CreateHealthMeasure createCreateHealthMeasure() {
         return new CreateHealthMeasure();
+    }
+
+    /**
+     * Create an instance of {@link GetAllFood }
+     * 
+     */
+    public GetAllFood createGetAllFood() {
+        return new GetAllFood();
     }
 
     /**
@@ -524,14 +532,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetALLFood }
-     * 
-     */
-    public GetALLFood createGetALLFood() {
-        return new GetALLFood();
-    }
-
-    /**
      * Create an instance of {@link UpdatePassword }
      * 
      */
@@ -604,14 +604,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetALLFoodResponse }
-     * 
-     */
-    public GetALLFoodResponse createGetALLFoodResponse() {
-        return new GetALLFoodResponse();
-    }
-
-    /**
      * Create an instance of {@link GetHealthMeasureByIdUserResponse }
      * 
      */
@@ -649,6 +641,14 @@ public class ObjectFactory {
      */
     public GetGoalEndAtResponse createGetGoalEndAtResponse() {
         return new GetGoalEndAtResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetAllFoodResponse }
+     * 
+     */
+    public GetAllFoodResponse createGetAllFoodResponse() {
+        return new GetAllFoodResponse();
     }
 
     /**
@@ -762,15 +762,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetALLFoodResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "getALLFoodResponse")
-    public JAXBElement<GetALLFoodResponse> createGetALLFoodResponse(GetALLFoodResponse value) {
-        return new JAXBElement<GetALLFoodResponse>(_GetALLFoodResponse_QNAME, GetALLFoodResponse.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link GetHealthMeasureByIdUserResponse }{@code >}}
      * 
      */
@@ -813,15 +804,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "createActivity")
     public JAXBElement<CreateActivity> createCreateActivity(CreateActivity value) {
         return new JAXBElement<CreateActivity>(_CreateActivity_QNAME, CreateActivity.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetALLFood }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "getALLFood")
-    public JAXBElement<GetALLFood> createGetALLFood(GetALLFood value) {
-        return new JAXBElement<GetALLFood>(_GetALLFood_QNAME, GetALLFood.class, null, value);
     }
 
     /**
@@ -894,6 +876,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "getGoalEndAtResponse")
     public JAXBElement<GetGoalEndAtResponse> createGetGoalEndAtResponse(GetGoalEndAtResponse value) {
         return new JAXBElement<GetGoalEndAtResponse>(_GetGoalEndAtResponse_QNAME, GetGoalEndAtResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllFoodResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "getAllFoodResponse")
+    public JAXBElement<GetAllFoodResponse> createGetAllFoodResponse(GetAllFoodResponse value) {
+        return new JAXBElement<GetAllFoodResponse>(_GetAllFoodResponse_QNAME, GetAllFoodResponse.class, null, value);
     }
 
     /**
@@ -1290,6 +1281,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "createHealthMeasure")
     public JAXBElement<CreateHealthMeasure> createCreateHealthMeasure(CreateHealthMeasure value) {
         return new JAXBElement<CreateHealthMeasure>(_CreateHealthMeasure_QNAME, CreateHealthMeasure.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetAllFood }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://soap.document.introsde/", name = "getAllFood")
+    public JAXBElement<GetAllFood> createGetAllFood(GetAllFood value) {
+        return new JAXBElement<GetAllFood>(_GetAllFood_QNAME, GetAllFood.class, null, value);
     }
 
     /**

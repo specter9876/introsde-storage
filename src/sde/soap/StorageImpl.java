@@ -78,7 +78,7 @@ public class StorageImpl implements Storage {
         
       
         DB db=getDB();
-        List <Food> food = db.getALLFood();
+        List <Food> food = db.getAllFood();
         return food;
     }
    

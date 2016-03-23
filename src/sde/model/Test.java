@@ -1,7 +1,7 @@
 package sde.model;
-import introsde.document.ws.DB;
-import introsde.document.ws.DBService;
-import introsde.document.ws.User;
+import introsde.document.soap.DB;
+import introsde.document.soap.DBService;
+import introsde.document.soap.User;
 
 
 

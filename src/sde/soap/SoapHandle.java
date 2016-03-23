@@ -1,6 +1,6 @@
 package sde.soap;
 
-import introsde.document.ws.*;
+import introsde.document.soap.*;
 
 public class SoapHandle {
 	

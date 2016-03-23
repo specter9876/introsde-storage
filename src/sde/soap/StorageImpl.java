@@ -1,6 +1,6 @@
 package sde.soap;
 
-import introsde.document.ws.*;
+import introsde.document.soap.*;
 /*import introsde.document.soap.Food;
 import introsde.document.soap.User;
 import introsde.document.soap.Activity;

@@ -78,7 +78,7 @@ public class StorageImpl implements Storage {
     
     
     ////FOOD//////////////////////////////////////////////////////
- /*
+ 
     //Method #1:
     @Override
     public List<Food> getFood(){
@@ -192,21 +192,20 @@ public class StorageImpl implements Storage {
         db.removeUser(user);
         return true;
     }
-    */
+    
     //Method #10:
    @Override
 	public User loginUser(String userName, String password){
         
         
-        DBService service= new DBService();
-        DB db=service.getDBImplPort();
-         //DB db=getDB();
+       
+         DB db=getDB();
          User user=db.loginUser(userName,password);
         
         System.out.println("USer: "+user);
         return user;
     }
-    /*
+    
     
     //Method #11:
     @Override
@@ -619,6 +618,6 @@ public class StorageImpl implements Storage {
    ///ma poi questa anche se non @ovverride c è quando faccio wimport?
 
  
-     */
+    
     
 }

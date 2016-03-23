@@ -32,7 +32,7 @@ import java.util.Date;
 @SOAPBinding(style = Style.DOCUMENT, use=Use.LITERAL) //optional
 public interface Storage {
     
-  /*
+  
     
     ////FOOD//////////////////////////////////////////////////////
     
@@ -92,12 +92,12 @@ public interface Storage {
     @WebMethod(operationName="removeUser")
    // @WebResult(name="removed")
     public boolean removeUser (@WebParam(name="userIn") User user);
-    */
+    
     //Methid #10:
     @WebMethod(operationName = "loginUser")
 	@WebResult(name = "user")
 	public User loginUser(@WebParam(name = "userName") String userName, @WebParam(name = "password") String password);
-/*
+
     //Method #11:
     @WebMethod(operationName = "updatePassword")
 	//@WebResult(name = "updated")
@@ -233,6 +233,6 @@ public interface Storage {
     @WebMethod(operationName="getAdapterFood")
     @WebResult(name="foods")
     public List<Food> getAdapterFood(@WebParam(name = "type") String type);//throws IOException, JAXBException, SAXException,TransformerException, ParserConfigurationException;
-    */
+    
 
 }

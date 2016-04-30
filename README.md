@@ -1,3 +1,7 @@
 # introsde-storage
-Available at http://immense-shore-7749.herokuapp.com/ws/storage
-Wisdl available at http://immense-shore-7749.herokuapp.com/ws/storage?wsdl
+
+A SOAP web services that manages and handle all data request, in detail it talks with database web service and adapter web services 
+
+#WSDL
+
+Wisdl available at http://sheltered-stream-88810.herokuapp.com/ws/storage?wsdl
